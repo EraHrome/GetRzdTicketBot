@@ -1,0 +1,76 @@
+﻿namespace RzdApi.Services.Implementations.GetTrainsDataService.Models
+{
+    public class Train
+    {
+        public List<CarGroup> CarGroups { get; set; }
+        public bool IsFromSchedule { get; set; }
+        public bool IsTourPackagePossible { get; set; }
+        public object CarTransportationsFreePlacesCount { get; set; }
+        public object ActualMovement { get; set; }
+        public object CategoryId { get; set; }
+        public object ScheduleId { get; set; }
+        public List<string> BaggageCarsThreads { get; set; }
+        public object CarTransportationCoachesThreads { get; set; }
+        public string Provider { get; set; }
+        public bool IsWaitListAvailable { get; set; }
+        public bool HasElectronicRegistration { get; set; }
+        public bool HasCarTransportationCoaches { get; set; }
+        public bool HasDynamicPricingCars { get; set; }
+        public bool HasTwoStoreyCars { get; set; }
+        public bool HasSpecialSaleMode { get; set; }
+        public List<string> Carriers { get; set; }
+        public List<string> CarrierDisplayNames { get; set; }
+        public int Id { get; set; }
+        public bool IsBranded { get; set; }
+        public string TrainNumber { get; set; }
+        public string TrainNumberToGetRoute { get; set; }
+        public string DisplayTrainNumber { get; set; }
+        public string TrainDescription { get; set; }
+        public string TrainName { get; set; }
+        public string TrainNameEn { get; set; }
+        public string TransportType { get; set; }
+        public string OriginName { get; set; }
+        public string InitialStationName { get; set; }
+        public string OriginStationCode { get; set; }
+        public OriginStationInfo OriginStationInfo { get; set; }
+        public InitialTrainStationInfo InitialTrainStationInfo { get; set; }
+        public string InitialTrainStationCode { get; set; }
+        public string InitialTrainStationCnsiCode { get; set; }
+        public string DestinationName { get; set; }
+        public string FinalStationName { get; set; }
+        public string DestinationStationCode { get; set; }
+        public DestinationStationInfo DestinationStationInfo { get; set; }
+        public FinalTrainStationInfo FinalTrainStationInfo { get; set; }
+        public string FinalTrainStationCode { get; set; }
+        public string FinalTrainStationCnsiCode { get; set; }
+        public List<string> DestinationNames { get; set; }
+        public List<string> FinalStationNames { get; set; }
+        public DateTime DepartureDateTime { get; set; }
+        public DateTime LocalDepartureDateTime { get; set; }
+        public DateTime ArrivalDateTime { get; set; }
+        public DateTime LocalArrivalDateTime { get; set; }
+        public List<DateTime> ArrivalDateTimes { get; set; }
+        public List<DateTime> LocalArrivalDateTimes { get; set; }
+        public DateTime DepartureDateFromFormingStation { get; set; }
+        public int DepartureStopTime { get; set; }
+        public int ArrivalStopTime { get; set; }
+        public double TripDuration { get; set; }
+        public int TripDistance { get; set; }
+        public bool IsSuburban { get; set; }
+        public bool IsComponent { get; set; }
+        public List<string> CarServices { get; set; }
+        public bool IsSaleForbidden { get; set; }
+        public bool IsTicketPrintRequiredForBoarding { get; set; }
+        public string BookingSystem { get; set; }
+        public bool IsVrStorageSystem { get; set; }
+        public string PlacesStorageType { get; set; }
+        public List<string> BoardingSystemTypes { get; set; }
+        public string TrainBrandCode { get; set; }
+        public object TrainClassNames { get; set; }
+        public string ServiceProvider { get; set; }
+        public string DestinationStationName { get; set; }
+        public string OriginStationName { get; set; }
+        public bool IsPlaceRangeAllowed { get; set; }
+        public bool IsTrainRouteAllowed { get; set; }
+    }
+}
