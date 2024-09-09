@@ -1,6 +1,7 @@
 ﻿using GetRzdTicketBot.Models;
 using RzdApi.Services.Implementations.GetTrainsDirectionsService;
 using RzdApi.Services.Implementations.GetTrainsDirectionsService.Models;
+using System;
 using System.Text.Json;
 using Telegram.Bot;
 using Telegram.Bot.Exceptions;
@@ -13,6 +14,13 @@ using Telegram.Bot.Types.ReplyMarkups;
 class Program
 {
     private static Dictionary<long, SearchCitiesDTO> _userRequestData = new Dictionary<long, SearchCitiesDTO>();
+    private static void RemoveFromUserRequestData(long key)
+    {
+        if (_userRequestData.TryGetValue(key, out _))
+        {
+            _userRequestData.Remove(key);
+        }
+    }
 
     private static async Task UpdateHandler(ITelegramBotClient botClient, Update update, CancellationToken cancellationToken)
     {
@@ -45,10 +53,7 @@ class Program
                                     // тут обрабатываем команду /start, остальные аналогично
                                     if (message.Text == "/start")
                                     {
-                                        if (_userRequestData.TryGetValue(chat.Id, out _))
-                                        {
-                                            _userRequestData.Remove(chat.Id);
-                                        }
+                                        RemoveFromUserRequestData(chat.Id);
                                         await botClient.SendTextMessageAsync(
                                             chat.Id,
                                             "Напишите, откуда вы собираетесь отправиться");
